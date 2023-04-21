@@ -3,6 +3,8 @@ package base;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+
+
 public class Principal {
 	private static final Logger LOGGER = Logger.getLogger(Principal.class.getName());
 
@@ -12,7 +14,7 @@ public class Principal {
 	
 	private static boolean compuertasVerificadas = false;
 
-	public static void main(String[] args) {
+	private static void main(String[] args) {
 
 		System.out.println(
 				"Este programa lee el nivel de agua de una presa y permite abrir compuertas si tenemos permiso (el nivel es superior a 50) y las compuertas est�n verificadas.");
@@ -23,7 +25,11 @@ public class Principal {
 
 	}
 
-	private static void mostrarMenu(int nivel) {
+	
+	
+	
+
+	public static void mostrarMenu(int nivel) {
 		int opcion = 0;
 		do {
 			System.out.println();
@@ -72,6 +78,10 @@ public class Principal {
 				break;
 			}
 		} while (opcion != 5);
+		
+
+		
+		
 	}
 
 	static int leerNivelAgua() {
@@ -86,14 +96,24 @@ public class Principal {
 			return false;
 		}
 	}
-	
+/**
+ * @author Ugaitz Bilbao
+ * Si de nivel es mayor de 50 devuelve un true si es menor false
+ * @param nivel
+ * @return true si nivel > 50 / false si nivel < 50
+ */
 	static boolean solicitarPermiso(int nivel) {
+
 		if (nivel > 50) {
 			return true;
 		}else {
 			return false;
 		}
+		
 	}
+	
+
+	
 	static boolean verificarCompuertas() {		
 		return true;
 	}
